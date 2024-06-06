@@ -1,5 +1,8 @@
 FROM mongo:6
 
+# Allow the mongodb user to execute certain commands as root without a password
+RUN echo "mongodb ALL=(root) NOPASSWD: /usr/bin/mkdir, /bin/chown" > /etc/sudoers.d/mongodb
+
 # Add init scripts
 COPY --chown=mongodb:mongodb init-ssl.sh /usr/local/bin/init-ssl.sh
 COPY --chown=mongodb:mongodb wrapper.sh /usr/local/bin/wrapper.sh
