@@ -11,4 +11,7 @@ else
     echo "Certificates already exist and REGENERATE_CERTS is not set to true. Skipping certificate generation."
 fi
 
+echo "### ROOT CA CERTIFICATE ###"
+cat "$SSL_DIR/root.pem"
+
 /usr/local/bin/docker-entrypoint.sh "$@"

@@ -26,6 +26,3 @@ chown mongodb:mongodb "$SSL_DIR/server.key"
 chown mongodb:mongodb "$SSL_DIR/server.pem"
 chmod 600 "$SSL_DIR/server.key"
 chmod 600 "$SSL_DIR/server.pem"
-
-echo "### ROOT CA CERTIFICATE ###"
-cat "$SSL_DIR/root.pem"
