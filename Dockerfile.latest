@@ -16,4 +16,4 @@ RUN chmod +x /usr/local/bin/init-ssl.sh
 RUN chmod +x /usr/local/bin/wrapper.sh
 
 ENTRYPOINT ["wrapper.sh"]
-CMD ["mongod", "--config=/etc/mongo/mongod.conf", "--ipv6", "--bind_ip=::,0.0.0.0" ]
+CMD [ "mongod", "--config=/etc/mongo/mongod.conf", "--ipv6", "--bind_ip=::,0.0.0.0" ]
