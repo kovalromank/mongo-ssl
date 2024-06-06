@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SSL_DIR="/etc/mongo"
+SSL_DIR="/data/db/certs"
 INIT_SSL_SCRIPT="/usr/local/bin/init-ssl.sh"
 
 # Check if certificates need to be regenerated

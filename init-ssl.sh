@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SSL_DIR="/etc/mongo"
+SSL_DIR="/data/db/certs"
 
 mkdir -p "$SSL_DIR"
 

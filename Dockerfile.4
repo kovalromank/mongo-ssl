@@ -1,4 +1,4 @@
-FROM mongo:latest
+FROM mongo:4
 
 # Add init scripts
 COPY --chown=mongodb:mongodb init-ssl.sh /usr/local/bin/init-ssl.sh
