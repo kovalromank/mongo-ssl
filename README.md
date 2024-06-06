@@ -18,6 +18,10 @@ roll our own Mongo image with SSL enabled right out of the box.
 The Dockerfiles contained in this repository start with the official Mongo image as base. Then the `init-ssl.sh`
 script is copied into the container to be executed upon initialization.
 
+Self-signed server certificates are created using a generated root CA. The server's CN is set to the `MONGOHOST`
+variable. During startup the script will print the root CA private key and certificate so that they can be used to
+verify the server certificate and generate client certificates, as explained below.
+
 ## Accessing the service
 
 Mongo is launched with the `preferTLS` mode. This means that connections are not required to use TLS and you can
