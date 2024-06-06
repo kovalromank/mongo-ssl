@@ -1,5 +1,8 @@
 FROM mongo:7
 
+# Install sudo
+RUN apt-get update && apt-get install -y sudo
+
 # Allow the mongodb user to execute certain commands as root without a password
 RUN echo "mongodb ALL=(root) NOPASSWD: /usr/bin/mkdir, /bin/chown" > /etc/sudoers.d/mongodb
 
