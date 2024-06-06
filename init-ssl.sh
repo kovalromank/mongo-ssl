@@ -18,7 +18,7 @@ chmod 600 "$SSL_DIR/root.key"
 chmod 600 "$SSL_DIR/root.pem"
 
 # Generate Server Certificates
-openssl req -new -nodes -text -out "$SSL_DIR/server.csr" -keyout "$SSL_DIR/server.key" -subj "/CN=$MONGOHOST"
+openssl req -new -nodes -text -out "$SSL_DIR/server.csr" -keyout "$SSL_DIR/server.key" -subj "/CN=$MONGOHOST" 2>/dev/null
 openssl x509 -req -in "$SSL_DIR/server.csr" -text -out "$SSL_DIR/server.crt" -CA "$SSL_DIR/root.crt" -CAkey "$SSL_DIR/root.key" -CAcreateserial -days "${SSL_CERT_DAYS:-820}" 2>/dev/null
 cat "$SSL_DIR/server.key" "$SSL_DIR/server.crt" > "$SSL_DIR/server.pem"
 
