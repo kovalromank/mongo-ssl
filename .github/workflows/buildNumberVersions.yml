@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        dockerfile: ['Dockerfile.4', 'Dockerfile.5', 'Dockerfile.6', 'Dockerfile.7']
+        dockerfile: [ 'Dockerfile.5', 'Dockerfile.6', 'Dockerfile.7' ]
 
     steps:
       - name: Checkout sources
@@ -21,7 +21,7 @@ jobs:
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
-        
+
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v2
